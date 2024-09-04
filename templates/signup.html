@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'cssfiles/form.css' %}">
+</head>
+
+<body>
+    {% include 'includes/header.html' %}
+    {% if messages %}
+    {% for message in messages %}
+        
+<script>
+    window.alert("{{message}}")
+  </script>
+        <h1></h1>
+
+        <!-- alert("{{message}}") -->
+        {% endfor %}
+    
+    {% endif %}
+    <section class="container">
+        <div class="row justify-content-center  " style="align-items: center;">
+            <div class="col-md-5 m-2 p-4">
+                <div class="ff" >  <div class="m2">
+                    <div >
+                        <h3 style="font-size: 45px;font-weight: 400;" >SIGN UP</h3>
+                        <p style="font-size: 20px;color: blue;font-weight: 600;">joinus</p>
+                    </div>
+                    <div >
+                        <form  action="{% url 'signup' %}" method="post" onsubmit="return myvalidation()"  >
+                            {% csrf_token %}
+                            <div style="margin-bottom: 10px;"><label for="">Firstname</label><br>
+                                <input class="f1"  type="text" name="f_name" id="g1">
+                                <p id="s2"  class="f2" ></p>
+                            </div>
+                            <div style="margin-bottom: 10px;"><label for="">Lastname</label><br>
+                                <input class="f1"  type="text" name="l_name" id="g2">
+                                <p id="s3"  class="f2" ></p>
+                            </div>
+                            <div style="margin-bottom: 10px;"><label for="">Email</label><br>
+                                <input class="f1"  type="email" name="email" id="">
+                                <p id=""  class="f2" ></p>
+                            </div>
+
+                            <div style="margin-bottom: 10px;"><label for="">username</label><br>
+                                <input class="f1"  type="text" name="username" id="a4">
+                                <p id="s4"  class="f2" ></p>
+                            </div>
+                           
+                            <div style="margin-bottom: 10px;"><label for="">PASSWORD</label><br>
+                                <input
+                                class="f1"  style=" background-color: rgba(0, 0, 255, 0.087);"
+                                    type="password" name="password" id="g3">
+                                <p id="s6" class="f2" ></p>
+                                <!-- <p style="font-size:10px ;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        style="color:blue ;padding-top:5px" fill="currentColor" class="bi bi-exclamation-lg"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0L7.005 3.1ZM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z" />
+                                    </svg> 
+                                </p> -->
+                            </div>
+                            <div style="margin-bottom: 10px;"><label for="">Phone</label><br>
+                                <input class="f1"  type="tel" name="phone" id="g2">
+                                <p id="s5"  class="f2" ></p>
+                            </div>
+                            <div style="margin-bottom: 30px;">
+                                <!-- <P>By enrolling your mobile phone number, you consent to receive automated security
+                                    notifications via text message from Amazon. Message and data rates may apply. -->
+                                </P>
+                            </div>
+                            <div style="margin-bottom: 30px;"> <input type="submit" name="" id="" value="continue" class="f4" >
+                            </div>
+                            <div>
+                                <p>
+                                    Already have an account? <a class="w1"
+                                        style="text-decoration:none ;color: rgba(0, 0, 255, 0.806);" href="{% url 'form' %}">Log in</a> <br>
+                                     <br>
+                                </p>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div></div>
+            </div>
+        </div>
+    </section><br><br>
+    {% include 'includes/footer.html' %}
+
+
+    <script>
+
+
+        function myvalidation() {
+            var b=document.getElementById("g1").value;
+            var c=document.getElementById("g2").value;
+            var a = document.getElementById("a4").value;
+            var d = document.getElementById("g2").value;
+            var e = document.getElementById("g3").value;
+            var pass=/^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{6,20}$/;
+           
+            if (b==0||b=="" ){
+                document.getElementById("s2").innerHTML = "please enter these filled"
+                return false;
+            }
+            if (c==0||c=="" ){
+                document.getElementById("s3").innerHTML = "please enter these filled"
+                return false;
+            }
+
+            if (a == 0 || a == "") {
+                document.getElementById("s4").innerHTML = "please enter these filled"
+                return false;
+            }
+            else if (a.length < 8) {
+                document.getElementById("s4").innerHTML = "atleast minimum 8 words type"
+                return false;
+            }
+
+            else if (a.length > 16) {
+                document.getElementById("s4").innerHTML = "atleast maximum 16 words type"
+                return false;
+            }
+            if (e.match(pass)){
+                document.getElementById("s6").innerHTML="atleast 8 special character type"
+                return true;
+            }
+            // if (d.length==10 ){
+            //     document.getElementById("s5").innerHTML = "please enter 10 digits"
+            //     return false;
+            // }
+            
+            
+            // else {
+            //     document.getElementById("d1").innerHTML = a;
+            //     document.getElementById("d2").innerHTML = b;
+            //     document.getElementById("d3").innerHTML = c;
+            //     document.getElementById("d4").innerHTML = d;
+            //     return false;
+            // }
+
+        }
+
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'cssfiles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfiles/utility.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfiles/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfiles/owl.theme.green.css' %}">
+    <script src="{% static 'jsfiles/jquery.min.js' %}"></script>
+    <script src="{% static 'jsfiles/owl.carousel.min.js' %}"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <section>
+       
+        {% include 'includes/header.html' %}
+    </section>
+    <!--  -->
+
+
+    <section class="container">
+
+        <div class="row " style="background-color: rgba(220, 220, 220, 0.562);">
+            <!-- <div class="col-md-6  ">
+                <div style="padding: 10px;"><img width="100%" src="{% static 'images/arun je3.jpg' %}" alt=""></div>
+            </div> -->
+            <div class="col-md-12  ">
+                <div style="padding: 10px;">
+                    <div class="col">
+                        <div class="row-md-4">
+                            <div style="padding: 7px;">
+                                <p>
+                                <h3>Our mission</h3>
+                                <hr>
+                                <p>WEBSOL is a 100% professional developing approach , our main focus is to provide the
+                                    student with a right step towards achieving success in the fields of  ,
+                                    GST , Income Tax , TDS and much more . We have been teaching for around 2 years now
+                                    and have successfully taught more than 100 students. Our course has helped them to
+                                    gain practical knowledge and not only do better in their jobs rather generating a
+                                    side income by working independently in their own setups.</p>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row-md-4">
+                            <div style="padding: 7px;">
+                                <p>
+                                <h3>About the owner </h3>
+                                <hr>
+                                <p>WEBSOL
+                                </p>
+                                <h3>SKILLS</h3>
+                                <hr>
+                                <p>
+                                <ol>
+                                    <li> Html,css,bootstrap,advance css</li>
+                                    <li> java with framework</li>
+                                    <li> python basic</li>
+                                    <li>python Django framework</li>
+                                    <li> PYQT</li>
+                                    <li>mern stack</li>
+                                    <!-- <li>  </li> -->
+                                </ol>
+                                </p>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row-md-4">
+                            <div style="padding: 7px;">
+                                <p>
+                                <h3>Let's get in touch
+                                </h3>
+                                <hr>
+                                <p>Contact - 8800931204
+                                </p>
+                                <h6>Email id - web@gmail.com</h6>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+    
+
+
+    <!-- owl section start  -->
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    <section style="background-color: gainsboro; margin: 7px;margin-top: 100px;padding: 10px;">
+        <div class=" container text-center">
+            <div class="row g-5">
+                <div class="col-md-3">
+                    <div class="  bg-light"><iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/-6TUiPCc3AY" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="  bg-light"><iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/L5cwkgMXl8o" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="  bg-light"><iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/Xvlqu4h3UCQ" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="  bg-light"><iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/jrnaostNxYE" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="  bg-light"><iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/_NpmFfA82rg" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="  bg-light"><iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/IW1nkCO1G6w" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="  bg-light"><iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/ZgqMq8pn3Uk" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="  bg-light"><iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/8pTE-kdMJ9E" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="  bg-light"><iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/eeY2zq1cTeM" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="  bg-light"><iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/pkAXJM-wHWI" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="  bg-light"><iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/T2TG5CFsa-Y" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                </div>
+                <div class="col-md-3">
+                    <div class="  bg-light"><iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/P-9N0okbzrk" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <section class="">
+        <div style="padding: 20px;"><img width="100%" height="100%" src="{% static 'images/LLLLLL22.png' %}" alt=""></div>
+    </section> -->
+    <br>
+   
+
+
+
+
+
+    {% include 'includes/footer.html' %}
+
+
+
+    <script>$('.owl-carousel').owlCarousel({
+            loop: true,
+            dots: false,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        })
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

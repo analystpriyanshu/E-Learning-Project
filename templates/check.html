@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="cssfiles/style.css">
+    <link rel="stylesheet" href="cssfiles/utility.css">
+    <link rel="stylesheet" href="cssfiles/owl.carousel.css">
+    <link rel="stylesheet" href="cssfiles/owl.theme.green.css">
+    <script src="jsfiles/jquery.min.js"></script>
+    <script src="jsfiles/owl.carousel.min.js"></script> -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <section>
+       {% include 'includes/header.html' %}
+    </section>
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--  -->
+    <!-- {% if order is not None %}
+    <h6>{{order}}</h6>
+    <h3>{{payment}}</h3>
+    {% endif %} -->
+
+
+    <section class="container">
+
+        <div class="row " style="background-color:ghostwhite;   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;">
+            <div class="col-md-6  ">
+                <div style="padding: 5px;"><img height="450PX" width="100%" src="{{cour.image.url}}" alt=""></div>
+            </div>
+            <div class="col-md-6  ">
+                <div style="padding: 5px;">
+                   <H1 style="text-align: center; color: black;
+                  ">{{cour.name}}</H1>
+                   <HR></HR>
+                   <h2>price:₹{{cour.price}}</h2>
+                   <h2>offer:{{cour.offer}}%</h2>
+                  <!-- <h3 style=" color: black;">Payble Amount : <strong>{{cour.video.}}</strong></h3> -->
+                </div>
+
+                <div  style="margin-top: 15px;">  <a href="?action=create_payment"   ><button type="button" class=" btn " style=" background-color: rgb(229, 234, 234);font-size: 20px;padding: 15px; ">Pay Now</button> </a></div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+    {% include 'includes/footer.html' %}
+
+    {% if order is not None %}
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        var options = {
+            "key": "rzp_test_TZMz05AomJrJ17", // Enter the Key ID generated from the Dashboard
+            "name": "WEBSOL",
+            "amount":"{{order.amount}}",
+            "description": "payment for {{order.id}}",
+            "image": "https://example.com/your_logo",
+            "order_id": "{{order.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "callback_url": "http://127.0.0.1:8000/verify_payment",
+            "prefill": {
+                "name": "{{profile.user.first_name}}",
+                "email": "{{profile.email}}",
+                "contact": "{{profile.phone_no}}"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+    </script>
+      {% endif %}
+{% if error is not None %}
+<script>
+window.onload=()=>{
+    alert("{{error}}")
+}
+</script>
+{% endif %}
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

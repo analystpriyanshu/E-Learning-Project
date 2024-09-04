@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<body>
+    <!-- <nav class="navbar navbar-expand-lg       ;  " style="background-color: rgb(68, 21, 112);">
+        <div class="container-fluid">
+            <a class="a1" href="{% url 'indexpage'  %}">JOIN<span style="color:orangered ;">US</span> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" style="font-size: 14px;" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">subject</a></li>
+                            <li><a class="dropdown-item" href="#">subject</a></li>
+
+                            <li><a class="dropdown-item" href="#">subject</a></li>
+                        </ul>
+                    </li>
+
+                </ul> -->
+                <!-- <form style="width:30% ;" class="d-flex ms-auto" role="search">
+                    <input class="form-control me-2   " type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+                <!-- <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/index1' %} active {% endif %} me-3 b2" style="font-size: 24px; font-weight: 600;color: red;text-shadow: 2px 2px 4px #000000;" aria-current="page"
+                            href="{% url 'about' %}">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == 'gallary' %} active {% endif %} me-3 b2  " style="font-size: 24px; font-weight: 600;color:red;text-shadow: 2px 2px 4px #000000;"
+                            href="{% url 'gallery' %}">GALLERY</a>
+                    </li>
+                </ul>
+                <ul class="d-flex align-items-flex-end ms-auto mb-2 mb-lg-0">
+                
+                    {% if user.is_authenticated %}
+                    
+                    <li class="nav-item me-4 " style="list-style-type: none;">
+                       
+                     <a href="{% url 'profile' %}"><button type="button" class="btn btn-primary">profile</button>
+                     </a>
+                       
+                    </li>
+                    
+                    <li class="nav-item me-4 " style="list-style-type: none;">
+                            <button class="btn btn-primary"><a href="{% url 'logout' %}" style="text-decoration: none;color: white;">Logout</a></button>
+                    </li> -->
+                    <!-- <li class="nav-item " style="list-style-type: none;">
+                        <a class="nav-link me-3" aria-current="page" href="#"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="20" height="20" style="font-weight: 800;"
+                                fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                            </svg>
+                        </a>
+                    </li> -->
+                    <!-- {% else %}
+                    <li class="nav-item" style="list-style-type: none;">
+                        <a class="nav-link active b1 me-3" aria-current="page" href="{% url 'form' %}" style="background-color: blue;color: white;padding: 5px;">LOGIN</a>
+                    <li style="list-style-type: none;"><a class="nav-link active b1   me-3  " style="color: white;background-color: blue ;padding: 5px;"
+                            href="{% url 'signup' %}">Signup</a></li>
+
+                    </li>
+                    {% endif %}
+
+                    
+                    <li class="nav-item " style="list-style-type: none;">
+                        <a class="nav-link active  b1 me-3 " href="{% url 'address' %}"><svg 
+                                xmlns="http://www.w3.org/2000/svg" width="25" height="32"  fill="currentColor"
+                                class="bi bi-geo-alt" viewBox="0 0 16 16" style="background-color: white;">
+                                <path
+                                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                            </svg></a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav> --> 
+
+
+
+    <section class="animate__animated animate__zoomIn" >
+        <nav class="navbar navbar-expand-lg ;  " style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position: sticky;top: 8%;">
+            <div class="container-fluid">
+                <a class="a1" href="{% url 'indexpage'  %}">WEB<span style="color:orangered ;">SOL</span> </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active me-3 b2" style="font-size: 14px;" aria-current="page"
+                                href="{% url 'about' %}">ABOUT US</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link active  me-3 b2  " style="font-size: 14px;"
+                                href="{% url 'gallery' %}">GALLARY</a>
+                        </li> -->
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            
+                            <a class="nav-link active b1 me-3" aria-current="page" href="{% url 'profile' %}">Profile</a>
+                        </li>
+                      
+                        <li class="nav-item">
+                            <a class="nav-link active b1 bg-black me-3" aria-current="page" style="color: white;" href="{% url 'logout' %}">logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link active b1 me-3" aria-current="page" href="{% url 'form' %}">LOGIN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active b1 bg-black  me-3  " style="color: white;"
+                                href="{% url 'signup' %}">Signup</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link active  b1 me-3 " href="{% url 'address' %}"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                </svg></a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </section>
+    <!-- <section class=" position-absolute  ">
+
+        <div class="position-fixed animate_animated animate_bounceInDown " style="width: 40px;height: 40px;top: 220px;right: 10px;">
+            <a href="https://www.telegram.com/"><img width="100%" height="100%" src="{% static 'images/tel.jpeg' %}" alt=""></a>
+        </div>
+        <div class="position-fixed animate_animated animate_bounceInDown "
+            style="width: 40px;height: 40px;top: 265px;right: 10px;"><a
+                href="https://www.instagram.com/"><img width="100%" height="100%" src="{% static 'images/insta.jpeg' %}" alt=""></a>
+        </div>
+        <div class="position-fixed animate_animated animate_bounceInDown"
+            style="width: 40px;height: 40px;top: 310px;right: 10px;"><a
+                href=" "><img width="100%" height="100%" src="{% static 'images/whatsapp.jpeg' %}" alt=""></a>
+        </div>
+
+    </section> -->
+    
+</body>
+</html>

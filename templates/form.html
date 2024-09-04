@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'cssfiles/form.css' %}">
+</head>
+
+<body>
+    {% include 'includes/header.html' %}
+    <section class="container">
+        <div class="row justify-content-center  " style="align-items: center;">
+            <div class="col-md-5 m-2 p-4">
+                <div class="ff" >  <div class="m2">
+                    <div >
+                        <h3 style="font-size: 45px;font-weight: 400;" >LOGIN</h3>
+                        <p style="font-size: 20px;color: blue;font-weight: 600;">joinus</p>
+                    </div>
+                    <div >
+                        <form  action="{% url 'form' %}" method="post" onsubmit="return myvalidation()">
+                            {% csrf_token %}
+                            <div style="margin-bottom: 10px;"><label for="">Username</label><br>
+                                <input class="f1"  type="text" name="username" id="a1">
+                                <p id="s1"  class="f2" ></p>
+                            </div>
+                            <!-- <div style="margin-bottom: 10px;"><label for="">Mobile number</label><br>
+                                <input class="f1" type="number" name="" id="a2">
+                                <p id="s2"class="f2" ></p>
+                            </div> -->
+                            <div style="margin-bottom: 10px;"><label for="">PASSWORD</label><br>
+                                <input
+                                class="f1"  style=" background-color: rgba(0, 0, 255, 0.087);"
+                                    type="password" name="password" id="a2">
+                                <p id="n2" class="f2" ></p>password must be atleast 6 character
+                                
+                            </div>
+                            <!-- <div style="margin-bottom: 10px;"><label for="">Email (optional)</label><br>
+                                <input class="f1" type="email" name="" id="a4">
+                                <p id="s4"></p>
+                            </div> -->
+                            <div style="margin-bottom: 30px;">
+                                
+                            
+                            </div>
+                            <div style="margin-bottom: 30px;"> <input type="submit" name="" id="" value="continue" class="f4" >
+                            </div>
+                            <div>
+                                <p>
+                                    create account? <a class="w1"
+                                        style="text-decoration:none ;color: rgba(0, 0, 255, 0.806);" href="{% url 'signup' %}">Sign up</a> <br>
+                                  
+                                </p>
+                               
+                            </div>
+                        </form>
+                    </div>
+                </div></div>
+            </div>
+        </div>
+    </section><br><br>
+    {% include 'includes/footer.html' %}
+
+    <script>
+
+
+        function myvalidation() {
+            var a = document.getElementById("a1").value;
+            var b = document.getElementById("a2").value;
+            var passw=/^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{6,20}$/;
+            
+
+
+            if (a == 0 || a == "") {
+                document.getElementById("s1").innerHTML = "please enter these filled"
+                return false;
+            }
+            else if (a.length < 8) {
+                document.getElementById("s1").innerHTML = "atleast minimum 8 words type"
+                return false;
+            }
+
+            else if (a.length > 16) {
+                document.getElementById("s1").innerHTML = "atleast maximum 16 words type"
+                return false;
+            }
+            else if (b == null || b == "") {
+
+                document.getElementById("n2").innerHTML = "please filled these filled";
+                return false;
+
+                }
+            if (b.match (passw)) {
+
+
+                document, getElementById("n2").innerHTML = "atleat minimum eight character in password"
+                return true;
+
+                }
+            // else {
+            //     document.getElementById("d1").innerHTML = a;
+            //     document.getElementById("d2").innerHTML = b;
+            //     document.getElementById("d3").innerHTML = c;
+            //     document.getElementById("d4").innerHTML = d;
+            //     return false;
+            // }
+
+        }
+
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

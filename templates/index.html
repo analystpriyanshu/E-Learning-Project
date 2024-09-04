@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    {% load custom_tags %}
+    <link rel="stylesheet" href="{% static 'cssfiles/style.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfiles/utility.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfiles/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfiles/owl.theme.green.css' %}">
+    <script src="{% static 'jsfiles/jquery.min.js' %}"></script>
+    <script src="{% static 'jsfiles/owl.carousel.min.js' %}"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <section>
+        {% include 'includes/header.html' %}
+    </section>
+
+    <!-- Carousel Start -->
+
+    <!-- Carousel Start -->
+
+    <!-- Carousel Start -->
+    <section class="container animate__animated animate__fadeInRightBig" >
+        <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel" >
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img width="100%" height="100%" src="{% static 'images/bannerup.jpg' %}" alt="">
+
+                </div>
+                <div class="carousel-item active ">
+
+                    <img width="100%" height="100%" src="{% static 'images/ramramji.png' %}" alt="">
+
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <!-- Carousel End -->
+    <!-- Carousel End -->
+
+
+    <section class="container">
+
+        <div><div style="padding: 15px;margin: 5px;">
+            <h3>HOW TO BECAME A SUCCESSFUl DEVELOPER </h3>
+            <P style="color: black;font-weight: 600;">CHOOSE OUR COURSES</P>
+            
+        </div></div>
+        
+
+</section>
+
+
+
+
+
+    <section>
+
+        <div class="container text-center" style="border: 1px solid black;">
+           
+
+            <div class="row">
+                {% for i in a %}
+              <div class="col kl" style="margin: 8px;"><div class="card" style="width: 100%;">
+                
+                <img height="200px" src="{{i.image.url}}" class="card-img-top" alt="..." width="100%">
+             
+                <span><h3 style="color: blue;">{{i.name}}</h3></span>
+                <span><h5>Offer:{{i.offer}}%</h5></span>
+                
+                <div class="card-body">
+                   <h4>Price: <span><strike style="color: red;">₹{{i.price}}</strike></span> <span>₹{% cal_sellprice i.price i.offer %}</span></h4>
+                  
+                </div>
+              
+                <div class="card-body">
+                    <a href="indexpage3/{{i.slug}}" style="text-decoration: none;"><button type="button" class="btn btn-warning">Enroll</button></a>
+                </div>
+         
+              </div></div>
+            
+              {% endfor %}
+              <!-- <div class="col kl" style="margin: 8px;"><div class="card" style="width: 100%;">
+                <img height="200px" src="images/1111.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <button type="button" class="btn btn-warning">Warning</button>
+                </div>
+              </div></div>
+              <div class="col kl" style="margin: 8px;"><div class="card" style="width: 100%;">
+                <img height="200px" src="images/1111.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <button type="button" class="btn btn-warning">Warning</button> 
+                </div>
+              </div></div>
+              <div class="col kl" style="margin: 8px;"><div class="card" style="width: 100%;">
+                <img height="200px" src="images/1111.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <button type="button" class="btn btn-warning">Warning</button>
+                </div>
+              </div></div> -->
+            </div>
+           
+          </div>
+    
+     </section>
+
+    <!-- owl section start  -->
+    <!-- <a href="">
+        <section class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="padding: 10px;"><img width="100%" height="400px" src="{% static 'images/AGIT.png' %}"
+                            alt=""></div>
+                </div>
+            </div>
+        </section> -->
+
+    <!-- <a href=""><div ><img src="{% static 'images/1111.jpg' %}" alt="" style="height: 500px;margin-left: 100px;width: 1150px;"></div> -->
+
+    <!-- <section style="padding: 20px;"> -->
+        <!-- <div class="row "> -->
+            <!-- <div class="col-md-10 container " style="border: 1px solid black;margin-top: 10px;"> -->
+               <!-- <div class="owl-carousel owl-theme "> -->
+                <!-- {% for i in a %}   -->
+                    <!-- <div class="item m-2"> -->
+                      
+                        <!-- <div class="card" style="width: 100%;"> -->
+                            <!-- <a href=""> <img style="height: 200px;" src="{{i.image.url}}" -->
+                                    <!-- class="card-img-top  " alt="..."></a> -->
+                            <!-- <div class="card-body"> -->
+                               <!-- <h1 style="font-size: 20px;color: blue;text-align: center;"></h1>  -->
+                               <!-- <hr> -->
+                               <!-- <a href="indexpage2/{{i.slug}}">show more</a> -->
+                                
+                                <!-- <a href=""
+                                    style="text-decoration: none;background-color: blue;font-size: 20px;color: white;padding: 5px;box-shadow: 5px 5px 15px black ;margin-left: 30%;">Enroll now</a>
+                            
+                                <a href=""
+                                    style="text-decoration: none;background-color: blue;font-size: 20px;color: white;padding: 5px;box-shadow: 5px 5px 15px black ;padding-left: 50%;">Enroll now</a> -->
+                                
+                                <!-- <h5 class="card-title">GST - 3000 -->
+                                <!-- </h5> -->
+                                <!-- <p class="card-text">Somed make up.</p> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    
+                    <!-- </div> -->
+                    <!-- {% endfor %} -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </section> -->
+    <!-- <br> -->
+
+
+    <br><br><br><br>
+    <!-- <section class="container">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item" style="border: 2px solid yellow;">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button style="background-color: rgba(255, 166, 0, 0.835);font-size: 30px;font-weight: 500;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        why to join your courses
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>
+                                <p>Each course is designed with pratical approach.</p>
+                            </li>
+                            <li>
+                                <p>Our focus is to provide live and practical training for returns,registrations and other process,so that after completion of course you canserve the society.</p>
+                            </li>
+                           
+                        </ul>
+                        </div>
+                </div>
+            </div>
+            <div class="accordion-item" style="border: 2px solid yellow;">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button  style="background-color: rgba(255, 166, 0, 0.791);font-size: 30px;font-weight: 500;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        HOW to join your courses ?
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>
+                                <p>Go on the signup tab and register yourself </p>
+                            </li>
+                            <li>
+                                <p>Go in Dashboard Tab and login with your registered mail id and password.</p>
+                            </li>
+                            <li>
+                                Choose course of your choice
+                            </li>
+                            <li>
+                                Make payment
+                            </li>
+                            <li>
+                                After successful payment course will be active on your Profile tab.
+                            </li>
+                        </ul>
+                        </div>
+                </div>
+            </div>
+            <div class="accordion-item" style="border: 2px solid yellow;">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button  style="background-color: rgba(255, 166, 0, 0.835);font-size: 30px;font-weight: 500;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        WHO SHOULD JOIN ?
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Course are designed in a way that professional like CA,CS,CMA,CWA,Advocate,Accountant can join course and add value in there knowledge.</li>
+                            <li>Studens can crack there exam easily because of practical approach</li>
+                            <li>
+                                Person who are job seekers or have a dream to become self employed can achieve there dream  
+                            </li>
+                            <li>
+                                anyone who is interested in learning can join our courses.
+                            </li>
+                        </ul>
+                        
+                        </div>
+                </div>
+            </div>
+            <div class="accordion-item" style="border: 2px solid yellow;">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button  style="background-color: rgba(255, 166, 0, 0.835);font-size: 30px;font-weight: 500;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        RECORDED lectures/video meanings?
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                         <ul>
+                            <li>
+                                Recorded lectures have limited period validity i.e 30 days or 60 days according to the course length.
+                            </li>Why validity?:validity period is for the benefit of learner,if we provide life time than may be you will not set your target time that means your investment in course will be wasted.That is why our each course is having limited period validity.  
+                            </li>
+                         </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item" style="border: 2px solid yellow;">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button  style="background-color: rgba(255, 166, 0, 0.835);font-size: 30px;font-weight: 500;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        will i get certificate ?
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>
+                                Yes after the completion of course and clear the test conducting after the course you will download your certificate.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <br> -->
+
+    <section class="container">
+        <div class="row"><div class="col-md-6"><div><div ><div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item" style="border: 2px solid yellow;">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button style="background-color: rgba(255, 166, 0, 0.835);font-size: 30px;font-weight: 500;"
+                        class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        why to join our courses?
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>
+                                <p>Each course is designed with practical approach</p>
+                            </li>
+                            <li>
+                                <p>Our focus is to provide live and practical training for returns,registrations and other process,so that after completion of course you canserve the society.</p>
+                            </li>
+                            <li>
+                          
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item" style="border: 2px solid yellow;">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button style="background-color: rgba(255, 166, 0, 0.791);font-size: 30px;font-weight: 500;"
+                        class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        How to join our courses ?
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>
+                                <p>Go on the signup tab and register yourself </p>
+                            </li>
+                            <li>
+                                <p>Go in Dashboard Tab and login with your registered mail id and password.</p>
+                            </li>
+                            <li>
+                                Choose course of your choice
+                            </li>
+                            <li>
+                                Make payment
+                            </li>
+                            <li>
+                                After successful payment course will be active on your Profile tab.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item" style="border: 2px solid yellow;">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button style="background-color: rgba(255, 166, 0, 0.835);font-size: 30px;font-weight: 500;"
+                        class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Who should join ?
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">ul>
+                        <li>Course are designed in a way that professional like CA,CS,CMA,CWA,Advocate,Accountant can join course and add value in there knowledge.</li>
+                        <li>Studens can crack there exam easily because of practical approach</li>
+                        <li>
+                            Person who are job seekers or have a dream to become self employed can achieve there dream  
+                        </li>
+                        <li>
+                            anyone who is interested in learning can join our courses.
+                        </li>
+                    </ul></div>
+                </div>
+            </div>
+            <div class="accordion-item" style="border: 2px solid yellow;">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button style="background-color: rgba(255, 166, 0, 0.835);font-size: 30px;font-weight: 500;"
+                        class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Recorded lectures/video meanings?
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><ul>
+                        <li>
+                            Recorded lectures have limited period validity i.e 30 days or 60 days according to the course length.
+                        </li>
+                        <li>Why validity?:validity period is for the benefit of learner,if we provide life time than may be you will not set your target time that means your investment in course will be wasted.That is why our each course is having limited period validity.  
+                        </li>
+                     </ul></div>
+                </div>
+            </div>
+            <div class="accordion-item" style="border: 2px solid yellow;">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button style="background-color: rgba(255, 166, 0, 0.835);font-size: 30px;font-weight: 500;"
+                        class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        will i get certificate ?
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><ul>
+                        <li>
+                            Yes after the completion of course and clear the test conducting after the course you will download your certificate.
+                        </li>
+                    </ul></div>
+                </div>
+            </div>
+
+        </div></div></div></div>
+        <div class="col-md-6"><div> <div style="height: 355px;"><img width="100%" height="100%" src="{% static 'images/a3.jpg' %}" alt=""></div></div></div></div>
+    </section>
+    <br><br><br>
+
+
+
+    <br>
+   
+
+
+    <!-- <section class="mt-5" style="padding-left: 30px;background-color: gainsboro;margin-left: 7px; margin-right: 7px;">
+        <div class="container overflow-hidden text-start ">
+            <div class="row gy-2">
+                <div class="col-12">
+                    <div class="p-1 d1  ">St</div>
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <br>
+    <!-- <section class="">
+        <div style="padding: 20px;"><img width="100%" height="100%" src="{% static 'images/LLLL111.png' %}" alt="">
+        </div>
+    </section> -->
+    <br>
+
+    
+    <br>
+
+
+    <section class="container" > <div><h1 style="text-align: center;font-weight: 600;"> Student feedback</h1></div></section>
+    <br>
+        <section class="container"
+            style="display: grid;grid-template-columns: 1fr 1fr 1fr 1fr  ;    column-gap: 8px; row-gap: 8px;">
+            
+            <div style="height: 200px; "><video width="100%" height="100%" controls muted loop   >
+                <source src="{% static 'videos/VID-20230120-WA0001.mp4' %}" type="video/mp4">
+                </video></div>
+            <div style="height: 200px; "><video width="100%" height="100%" controls muted loop   >
+                <source src="{% static 'videos/VID-20230120-WA0002.mp4' %}" type="video/mp4">
+                </video></div>
+            <div style="height: 200px; "><video width="100%" height="100%" controls muted loop   >
+                <source src="{% static 'videos/VID-20230120-WA0003.mp4' %}" type="video/mp4">
+                </video></div>
+            <div style="height: 200px; "><video width="100%" height="100%" controls muted loop   >
+                <source src="{% static 'videos/VID-20230120-WA0004.mp4' %}" type="video/mp4">
+                </video></div>
+            <div style="height: 200px; "><video width="100%" height="100%" controls muted loop   >
+                <source src="{% static 'videos/VID-20230120-WA0005.mp4' %}" type="video/mp4">
+                </video></div>
+            <div style="height: 200px;"><video width="100%" height="100%" controls muted loop   >
+                <source src="{% static 'videos/VID-20230120-WA0006.mp4' %}" type="video/mp4">
+                </video></div>
+            <div style="height: 200px; "><video width="100%" height="100%" controls muted loop   >
+                <source src="{% static 'videos/VID-20230120-WA0007.mp4' %}" type="video/mp4">
+                </video></div>
+            <div style="height: 200px; "><video width="100%" height="100%" controls muted loop   >
+                <source src="{% static 'videos/VID-20230120-WA0008.mp4' %}" type="video/mp4">
+                </video></div>
+            <div style="height: 200px; "><video width="100%" height="100%" controls muted loop   >
+                <source src="{% static 'videos/VID-20230120-WA0008.mp4' %}" type="video/mp4">
+                </video></div>
+            <div style="height: 200px;"><video width="100%" height="100%" controls muted loop   >
+                <source src="{% static 'videos/VID-20230120-WA0009.mp4' %}" type="video/mp4">
+                </video></div>
+            <div style="height: 200px;"><video width="100%" height="100%" controls muted loop   >
+                <source src="{% static 'videos/VID-20230120-WA0010.mp4' %}" type="video/mp4">
+                </video></div>
+    
+    
+    
+    
+        </section>
+        <!-- <section class="container" > <div><h1 style="text-align: center;font-weight: 600;"> student feedback</h1></div></section> -->
+<br>
+    
+    <br>
+
+   
+    {% include 'includes/footer.html' %}
+   
+
+
+
+    <script>$('.owl-carousel').owlCarousel({
+            loop: true,
+            dots: false,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        })
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+        <!-- Smartsupp Live Chat script -->
+
+
+</body>
+
+</html>
